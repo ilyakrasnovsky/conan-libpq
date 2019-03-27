@@ -21,12 +21,7 @@ class LibpqConan(ConanFile):
         "with_zlib": [True, False],
         "with_openssl": [True, False]
         }
-    default_options = {
-        "shared": False,
-        "fPIC": True,
-        "with_zlib": False,
-        "with_openssl": False
-        }
+    default_options = "shared=False", "fPIC=True", "with_zlib=False", "with_openssl=False"
     generators = "cmake"
     _build_subfolder = "build_subfolder"
     _source_subfolder = "source_subfolder"
