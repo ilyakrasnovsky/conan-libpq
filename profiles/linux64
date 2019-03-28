@@ -9,4 +9,5 @@ compiler.libcxx=libstdc++
 build_type=Release
 [options]
 [build_requires]
+cmake_installer/3.10.0@conan/stable
 [env]
