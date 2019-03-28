@@ -7,4 +7,6 @@ IDT-fork of [conan-libpq](https://github.com/bincrafters/conan-libpq), with OSS 
 * `$> C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat`
 * `$> conan create . bincrafters/stable --profile=/some/profile/containing/cmake_installer`
 
+On linux, it's just the latter command, but before you run it, you need to hack conan a little bit: in `venv/lib/python3.5/site-packages/conans/client/tools/net.py`, modify the signature of `def get()` to take in an optional `verify=True`, parameter, and pass that to the `download()` call in the implementation via `verify=verify`. The `conanfile.py` in this directory will then work on Linux. 
+
 See this [procedure](http://gitty.corp.idtus.com/core.low/app-logger/snippets/112) for a similar problem with other Conan libraries. 
